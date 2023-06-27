@@ -48,4 +48,8 @@ A commitnál kiírja, hogy hány sor került be és ki
 
 Ezután pusholhatjuk a változtatásokat
 
->> git push
+>> git push origin master
+
+Ha nem akarjuk, hogy az origin mastert meg kelljen adni, akkor adjuk meg a következő parancsot, amivel beállítjuk az alapértelmezett branchet
+
+>> git branch --set-upstream-to=origin/master master
