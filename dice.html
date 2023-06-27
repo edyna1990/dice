@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container, p{
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        button{
+            color: white;
+            background-color: green;
+            border-radius: 3px;
+            border: solid 1px white;
+        }
+        button:hover{
+            background-color: lightgreen;
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button onclick='gurulj()'>Gurítsd</button>
+    <div class="container">
+        <div id="dice"></div>
+    </div>
+    <p></p>
+   
+    <script>
+        //document.querySelector(".fa-solid").style.color="red"
+        const arr=["one", "two", "three", "four", "five", "six"]
+        const diceIcon='<i class="fa-solid fa-10x"></i>'
+
+        let total=0
+        function setNewNum(last) {
+            if (last != 0) {
+                setTimeout(function(){
+                    setNewNum(last - 1)
+                }, 50);
+            } else {
+                total++
+            }
+            const ranNr=Math.floor(Math.random()*6)+1
+            console.log(ranNr)
+            document.querySelector('#dice').innerHTML=diceIcon
+            const diceClass='fa-dice-'+arr[ranNr-1]
+            document.querySelector('i').classList.add(diceClass)
+            console.log(total)
+            document.querySelector("p").innerHTML=`Ez volt a(z) ${total}. dobás!`
+        }
+        function gurulj(){
+            if(total==5){
+                alert("Nem dobhatsz többet!")
+                return
+            }
+            setNewNum(20);
+        }
+        document.querySelector("div").style.color="green"
+
+    </script>
+</body>
+</html>
