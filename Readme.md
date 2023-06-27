@@ -53,3 +53,5 @@ Ezután pusholhatjuk a változtatásokat
 Ha nem akarjuk, hogy az origin mastert meg kelljen adni, akkor adjuk meg a következő parancsot, amivel beállítjuk az alapértelmezett branchet
 
 >> git branch --set-upstream-to=origin/master master
+
+Nagyon szeretlek!
